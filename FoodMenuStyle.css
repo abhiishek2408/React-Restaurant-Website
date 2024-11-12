@@ -1,0 +1,293 @@
+/* Menu container with a grey background */
+.menu-container {
+    padding: 20px;
+    color: #000;
+    background-color: #2C2C2C;
+  }
+  
+  /* Food type heading */
+  .food-type-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  /* Grid container for menu item cards */
+  .menu-item-cards-flex {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    gap: 20px; /* Gap between the items */
+    justify-content: center; /* Center align the grid */
+    margin-top: 20px;
+  }
+  
+  /* Individual card styling with white background and shadow */
+  .menu-item-card-flex {
+    background-color: white; /* White background for each card */
+    border: 1px solid #ccc;
+    padding: 15px;
+    
+    height: 93%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05); /* Shadow around each card */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
+  }
+  
+  .menu-item-card-flex:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1); /* Darker shadow on hover */
+  }
+  
+  /* Image container with border shadow */
+  .image-container {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow around the image */
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+
+  .item-name {
+    font-size: 1.3em;
+    color: #000;
+    margin-left: 50%;
+    textalign:left;
+     font-family: 'Roboto', sans-serif; /* Simple and clean for item names */
+}
+  
+  /* Name and rating on the same line */
+  .name-rating {
+    display: flex;
+    justify-content: space-between; /* Space between name and rating */
+    margin-top: 10px;
+  }
+  
+  .name-rating h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  
+  /* Price and time on the same line */
+  .item-price-time {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      gap: -40%;
+    font-size: 7px;
+    color: #090909;
+    
+}
+
+.item-price-time p {
+    font-size: 17px;
+    color: #090909;
+    
+}
+
+/* Labels for vegan / non-vegan centered */
+.item-vegan-label {
+    display: flex;
+    justify-content: center; /* Centering the vegan label */
+    margin-top: 5px;
+    color: green;
+    font-size: 14px;
+}
+
+.item-non-vegan-label {
+    display: flex;
+    justify-content: center; /* Centering the non-vegan label */
+    margin-top: 35px;
+    color: red;
+    font-size: 14px;
+}
+
+/* Modal content styles */
+
+/* Modal for item details */
+#menuModal.menu-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: -30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+  .menu-modal-content {
+      background-color: rgb(255, 255, 255);
+      border-radius: 8px;
+      padding: 70px;
+      max-width: 1400px;
+      width: 90%;
+      height: 90%;
+      position: relative;
+    }
+    
+    .menu-modal-close {
+        position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.menu-modal-container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.menu-product-detail {
+     display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    font-family: 'Lato', sans-serif;
+}
+
+
+.menu-product-content {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+    position: relative;
+    top: -22px; 
+}
+
+
+.menu-product-content .menu-product-image {
+    min-width: 300px;
+    text-align: center;
+    margin-right: 20%;
+    margin-top: 3%;
+}
+
+.menu-product-content .menu-product-image img {
+    max-width: 80%;
+    margin-right: 10%;
+   /* border: 2px solid red; */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.menu-additional-info {
+    margin-top:20px;
+    margin-left:13%;
+    font-family: 'Lato', sans-serif;
+    padding: 0;
+    border-radius: 4px;
+    list-style: none;
+}
+
+.menu-additional-info ul li {
+    list-style: none;
+    font-family: 'Lato', sans-serif;
+}
+
+.menu-product-info {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    font-family: 'Lato', sans-serif;
+}
+
+
+.menu-product-info h2 {
+    color: #e91e63;
+
+    margin: 0 0 10px;
+    font-family: 'Lato', sans-serif;
+}
+.menu-product-info p {
+    color: #0e0d0d;
+    font-size: .9rem;
+    margin: 0 0 10px;
+    font-family: 'Lato', sans-serif;
+}
+
+.rating {
+  font-size: 1.2em;
+  color: #ff9800;
+  margin: 10px 0;
+  font-family: 'Lato', sans-serif;
+}
+
+
+textarea {
+    width: 200px; /* Set the desired width */
+    height: 50px; /* Set the desired height */
+    resize: none; /* Prevents users from resizing the textarea */
+}
+
+
+
+
+
+  
+  
+.quantity-selector {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+
+.quantity-selector button {
+    background-color:black;
+    border: none;
+    color: white;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin: 0 -2px;
+    
+}
+
+.quantity-selector input {
+background-color:black;
+    border:none;
+    width: 40px;
+    height: 40px;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    margin: 0 -2px;
+}
+  
+  
+  
+  
+  .add-to-cart {
+    background-color: #f5a623;
+    border: none;
+    color: rgb(216, 18, 18);
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    font-size: 16px;
+  }
+  
+  .add-to-cart:hover {
+    background-color: #d98c17;
+  }
+  

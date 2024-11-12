@@ -1,0 +1,539 @@
+#hero {
+    position: relative;
+
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+}
+
+/* Overlay to darken the background */
+#hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    /* Dark overlay for better contrast */
+    z-index: 0;
+}
+
+/* Hero Content Styling */
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.feature-img1 {
+    float: right;
+    position: absolute;
+    margin-left: 70%;
+    height: 100%;
+    width: 30%;
+}
+
+.feature-img2 {
+    z-index: 1;
+
+    position: absolute;
+    top: 18%;
+    margin-right: 70%;
+    height: 45%;
+}
+
+
+.feature-img2 {
+    z-index: 1;
+    border: 6px solid #FF7518;
+    border-radius: 50%;
+    position: absolute;
+    top: 18%;
+    margin-right: 70%;
+    height: 45%;
+}
+
+.feature-img3 {
+    z-index: 1;
+    position: absolute;
+    top: 55%;
+    margin-right: 49%;
+    height: 10%;
+    width: 8%;
+    object-fit: cover;
+    background-color: none;
+    /* Replace with your background color */
+    mix-blend-mode: multiply;
+}
+
+.feature-img4 {
+    z-index: 1;
+    position: absolute;
+    top: 18%;
+    margin-right: 92%;
+    height: 10%;
+    width: 8%;
+    object-fit: cover;
+    background-color: none;
+    /* Replace with your background color */
+    mix-blend-mode: multiply;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    color: #FF7518;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    /* Adds a soft shadow */
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    color: #000;
+    /* Adds a soft shadow */
+}
+
+.btn-primary {
+    padding: 15px 30px;
+    background-color: black;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 30px;
+    border: 2px solid #FF7518;
+    transition: background-color 0.3s ease;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    /* Adds a soft shadow */
+}
+
+.btn-primary:hover {
+    background-color: #f2f2f2;
+    color: #000;
+    border: 2px solid #FF7518;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    /* Deepened shadow on hover */
+    transform: translateY(-2px);
+    /* Slightly raises button on hover */
+
+}
+
+
+
+.Bistrofy-container {
+    text-align: center;
+    background-color: #2c2c2c;
+    display: inline-block;
+    height: 60%;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ffffff;
+  }
+  
+  .Bistrofy-header {
+    font-size: 2.5rem;
+    max-width: 600px;
+  
+    margin: 0 auto 40px;
+    line-height: 1.5;
+    color: #ff7518;
+    font-family: "Roboto", sans-serif;
+    justify-content: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .Bistrofy-book-button {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: white;
+    color: #2c2c2c;
+    border: 2px solid #ff7518;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+  }
+  
+  .Bistrofy-book-button:hover {
+    background-color: #ff7518;
+    color: white;
+    border: 2px solid white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    /* Deepened shadow on hover */
+    transform: translateY(-2px);
+    /* Slightly raises button on hover */
+  }
+  
+  .Bistrofy-dining {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .Bistrofy-dining {
+    width: 50%;
+    height: 40%;
+    display: block;
+    margin: 20px auto;
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .Bistrofy-dining:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  }
+
+
+
+
+  /* Booking Form Container */
+
+
+
+
+
+
+
+
+
+/* Main container */
+.occasion-container {
+    font-family: "Roboto", sans-serif;
+    /* Setting Roboto for the entire component */
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #2c2c2c;
+    /* Slightly darker teal for better contrast */
+  
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    /* Subtle shadow for depth */
+  }
+  
+  /* Left Image Section */
+  .occasion-image-section {
+    flex: 1;
+    margin-right: 40px;
+  }
+  
+  .occasion-image-section img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 22px;
+    /* Soft shadow */
+  }
+  
+  .occasion-image-section img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Right Text Section */
+  .occasion-text-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+  }
+  
+  .occasion-icons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+  
+  .occasion-text-section h2 {
+    font-size: 2em;
+    font-weight: 700;
+    /* Bold weight for heading */
+    color: #ff7518;
+    margin-bottom: 15px;
+    line-height: 1.2;
+  }
+  
+  .occasion-description {
+    font-size: 1em;
+    font-weight: 300;
+    /* Light weight for paragraph */
+    color: #d1d1d1;
+    margin-bottom: 25px;
+    line-height: 1.6;
+  }
+  
+  /* Button Styling */
+  .occasion-button {
+    padding: 12px 24px;
+    background: none;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1em;
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: white;
+    color: #2c2c2c;
+    border: 2px solid #ff7518;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+    align-self: start;
+    margin-top: 10px;
+  }
+  
+  .occasion-button:hover {
+    background-color: #ff7518;
+    color: white;
+    border: 2px solid white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    /* Deepened shadow on hover */
+    transform: translateY(-2px);
+  }
+  
+  /* Contact Info Section */
+  .occasion-contact-info {
+    margin-top: 40px;
+  }
+  
+  .occasion-contact-info p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    font-weight: 400;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    /* Regular weight for contact info */
+  }
+  
+  .occasion-contact-info strong {
+    font-weight: 500;
+    color: #ffffff;
+  }
+  
+  .user-info {
+    color: #000;
+  }
+
+
+
+
+
+
+
+
+
+
+  
+.testimonial-section {
+  width: 100%;
+  max-width: 1400px;
+  padding: 2rem;
+  color: #ffffff; /* White text color */
+  background-color: #2c2c2c; /* Dark gray background color */
+  margin: auto;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+.testimonial-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #444444; /* Light gray border */
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.testimonial-header h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff7518; /* Theme color */
+}
+
+.icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: #ff7518; /* Theme color */
+}
+
+.testimonials {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  flex-wrap: wrap; /* Allows responsiveness */
+}
+
+.testimonial {
+  background-color: #333333; 
+  padding: 1.5rem;
+  width: 30%;
+  color: white;
+  border: 1px solid #444444;
+  border-radius: 8px;
+  opacity: 0; /* Initial state for animation */
+  transform: translateY(30px); /* Start position for animation */
+  animation: fadeInUp 1s ease forwards;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 1rem; 
+}
+
+.testimonial:hover {
+  box-shadow: 0 4px 20px rgba(255, 117, 24, 0.3);
+  transform: translateY(-10px); /* Slight lift effect */
+}
+
+.testimonial p {
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.testimonial .author {
+  font-weight: bold;
+  color: #ff7518; 
+}
+
+/* Fade-in Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+.footer {
+  background-color: #2c2c2c; 
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  padding: 2rem;
+  text-align: center;
+}
+
+footer {
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #444444;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 1rem;
+}
+
+.footer-section h3 {
+  font-size: 1.2rem;
+  color: #ff7518; 
+  margin-bottom: 0.5rem;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section a {
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 0.3rem 0;
+}
+
+.footer-section a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #ff7518;
+}
+
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: #ff7518;
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1); 
+  color: #ffffff; 
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  padding-top: 1rem;
+  font-size: 0.8rem;
+  color: #888888;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+/* Responsive Footer Layout */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,188 @@
+/* Global Settings */
+.booking-form-container {
+  background-color: #2c2c2c;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  margin-top: 1px;
+}
+
+/* Booking Form */
+.booking-form {
+  margin-top: 1px;
+  padding: 20px;
+  background-color: #333333;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease forwards;
+}
+
+.booking-form input,
+.booking-form textarea,
+.booking-form select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ff7518;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #444444;
+  transition: all 0.3s;
+}
+
+.booking-form input:focus,
+.booking-form textarea:focus,
+.booking-form select:focus {
+  border-color: #ff9518;
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 117, 24, 0.5);
+}
+
+/* Button Styles */
+.booking-form button {
+  padding: 12px 24px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #ff7518;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  display: block;
+  margin: 20px auto;
+  font-family: "Roboto", sans-serif;
+}
+
+.booking-form button:hover {
+  background-color: #ffa653;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 15px rgba(255, 117, 24, 0.4);
+}
+
+/* Form Title */
+.form-title {
+  font-size: 24px;
+  color: #ff7518;
+  margin: 10px 0 20px;
+  text-align: center;
+}
+
+/* Additional Boxes Container */
+.additional-boxes {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.additional-box {
+  background-color: #444444;
+  border: 1px solid #555555;
+  width: 45%;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.additional-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 117, 24, 0.3);
+}
+
+/* Image inside Additional Box */
+.additional-box img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 0 auto 15px;
+}
+
+.additional-box h4 {
+  color: #ff7518;
+  margin-bottom: 10px;
+}
+
+.additional-box p {
+  color: #bbbbbb;
+  font-size: 16px;
+}
+
+/* Right Details */
+.right-details {
+  text-align: left;
+}
+
+.right-details h4 {
+  color: #ff7518;
+}
+
+.right-details p {
+  color: #cccccc;
+  margin: 5px 0;
+}
+
+/* Form Rows */
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.form-row input,
+.form-row select {
+  width: calc(50% - 10px);
+}
+
+/* Testimonials */
+.testimonial {
+  background-color: #333333;
+  padding: 1.5rem;
+  width: 30%;
+  color: white;
+  border: 1px solid #444444;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 1rem;
+}
+
+.testimonial:hover {
+  box-shadow: 0 4px 20px rgba(255, 117, 24, 0.3);
+  transform: translateY(-10px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,185 @@
+/* Cart Container */
+.Cart-page {
+ 
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #2C2C2C;
+  color: #FF7518;
+
+}
+
+.cart-container {
+  display: flex;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #2C2C2C;
+  color: #FF7518;
+  border-radius: 8px;
+}
+
+.cart-items-section {
+  flex: 2;
+  background-color: #2C2C2C;
+}
+
+
+
+.cart-items-section h2 {
+  margin: 0;
+  font-size: 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid #FF7518;
+}
+
+.cart-items {
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 10px;
+  padding-bottom: 40px;
+}
+
+/* Cart Item */
+.cart-item {
+  display: flex;
+  gap: 10px;
+  height: 90px;
+  padding: 8px 0;
+  border-bottom: 1px solid #444;
+}
+
+.cart-items::-webkit-scrollbar {
+  display: none;
+}
+.cart-item-image img {
+  width: 70px;
+  height: 70px;
+  border-radius: 5px;
+}
+
+.cart-item-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+ height: 5px;
+}
+
+.cart-item-details p {
+  font-size: 12px;
+ }
+
+
+.cart-item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cart-item-name, .cart-item-price {
+  margin: 0;
+}
+
+.remove-btn {
+  background: none;
+  color: #FF7518;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Order Summary Section */
+.order-summary-section {
+  flex: 1;
+  padding: 20px;
+  background-color: #1F1F1F;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.labelbtn{
+  width: 10%;
+  height: 10%;
+  margin-right: 50%;
+  
+}
+
+ .payment-form label  {
+ width:40%;
+ 
+  color: #FF7518;
+} 
+
+/* Style for radio button and label to be in the same row */
+.radio-label {
+  display: flex;
+  gap: 15px; 
+  width: 40%;
+  margin-right: 60%;
+  margin-top: 10px;
+  
+  font-size: 1rem; /* Adjust font size */
+  color: #FF7518; /* Theme color */
+}
+
+.radio-label input[type="radio"] {
+  accent-color: #FF7518; /* Set the color of the radio button to match theme */
+}
+
+
+.payment-form input, .payment-form select {
+  width: 100%;
+  margin-top: 5px;
+  padding: 8px;
+  background-color: #333;
+  border: 1px solid #FF7518;
+  color: #FF7518;
+  border-radius: 4px;
+}
+
+.expiry-cvc {
+  display: flex;
+  gap: 10px;
+}
+
+/* Order Summary */
+.order-summary {
+  background-color: #2C2C2C;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  color: #FF7518;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.summary-item.total {
+  font-weight: bold;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #FF7518;
+  color: #2C2C2C;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.checkout-btn:hover {
+  background-color: #ff9c4a;
+}
+
+.error-message {
+  color: #FF7518;
+  margin-top: 10px;
+}
