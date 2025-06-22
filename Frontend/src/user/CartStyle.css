@@ -1,0 +1,276 @@
+/* Cart Container */
+.Cart-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 10px 120px;
+  background-color: #ffffff;
+}
+
+.cart-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #ff99b5;
+}
+
+/* Cart Items Section */
+.cart-items-section {
+  flex: 2;
+  padding: 10px;
+}
+
+.cart-items-section .cart-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #ff99b5;
+  border-bottom: 2px solid #ff99b5;
+  padding-bottom: 5px;
+  font-family: Poppins, sans-serif;
+}
+
+.cart-items {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.cart-items::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cart-items::-webkit-scrollbar-thumb {
+  background: #ff99b5;
+  border-radius: 3px;
+}
+
+/* Cart Item */
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ff99b5;
+  background-color: #fff;
+  margin-bottom: 15px;
+  transition: transform 0.2s ease;
+}
+
+.cart-item:hover {
+  transform: scale(1.01);
+  background-color: #fff0f5;
+}
+
+.cart-item.selected {
+  border: 2px solid #46ff18;
+  background-color: #ffffff;
+}
+
+.cart-item-image {
+  width: 100px;
+  height: 87px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cart-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cart-item-details {
+  flex: 1;
+  flex-direction: column;
+}
+
+.cart-item-details p,
+.cart-item-details h4 {
+  font-size: 14px;
+  margin: 2px 0;
+  color: #191D21;
+  font-family: Poppins, sans-serif;
+}
+
+.cart-item-name,
+.cart-item-price {
+  font-weight: bold;
+}
+
+.cart-item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-item-quantity button,
+.cart-item-quantity span {
+  font-size: 14px;
+  width: 24px;
+  height: 24px;
+  padding: 2px;
+  border: none;
+  background-color: #ff99b5;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cart-item-quantity span {
+  background-color: transparent;
+  color: #333;
+}
+
+/* Remove button */
+.remove-btn {
+  background: none;
+  color: #ff99b5;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.remove-btn:hover {
+  color: #d14b7c;
+}
+
+/* Order Summary Section */
+.order-summary-section {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  color: #333;
+  border-radius: 10px;
+  border: 1px solid #ff99b5;
+}
+
+.order-summary-section h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #ff99b5;
+  font-family: Poppins, sans-serif;
+}
+
+.order-summary-section p,
+.order-summary-section span {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-family: Poppins, sans-serif;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.summary-item.total {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Checkout Button */
+.checkout-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff99b5;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: Poppins, sans-serif;
+}
+
+.checkout-btn:hover {
+  background-color: #e36a95;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cart-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cart-items-section,
+  .order-summary-section {
+    width: 100%;
+  }
+}
+
+/* Address Modal */
+.address-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.address-form {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  border: 1px solid #ff99b5;
+}
+
+.address-form h3 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #ff99b5;
+}
+
+.address-form input,
+.address-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.address-form textarea {
+  height: 60px;
+  resize: none;
+}
+
+.address-form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #ff99b5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.address-form button:hover {
+  background: #e36a95;
+}
+

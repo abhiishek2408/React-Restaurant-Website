@@ -1,0 +1,30 @@
+[
+    {
+        "cart_id": "0",
+        "item_image_start": "data:image\/jpeg;base64,AAAAHGZ0eXBhdmlmAAAAAGF2aWZ..."
+    },
+    {
+        "cart_id": "5",
+        "item_image": "NULL or empty"
+    },
+    {
+        "cart_id": "4",
+        "item_image_start": "data:image\/jpeg;base64,ZnJlbmNoX2ZyaWVzX2ltYWdlLmp..."
+    },
+    {
+        "cart_id": "3",
+        "item_image_start": "data:image\/jpeg;base64,Y2hpY2tlbl9zYW5kd2ljaF9pbWF..."
+    },
+    {
+        "cart_id": "6",
+        "item_image_start": "data:image\/jpeg;base64,dmVnZ2llX2J1cmdlcl9pbWFnZS5..."
+    },
+    {
+        "cart_id": "2",
+        "item_image_start": "data:image\/jpeg;base64,dmVnZ2llX2J1cmdlcl9pbWFnZS5..."
+    },
+    {
+        "cart_id": "1",
+        "item_image_start": "data:image\/jpeg;base64,Y2hlZXNlX3BpenphX2ltYWdlLmp..."
+    }
+]

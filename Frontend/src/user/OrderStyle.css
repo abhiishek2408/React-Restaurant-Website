@@ -1,0 +1,486 @@
+.location-filter-section {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+.location-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.location-icon {
+    font-size: 1.2em;
+    color: #ff6347;
+}
+
+.location-text {
+    margin-left: 8px;
+    font-size: .7em;
+    color: #333;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+.filter-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 10px;
+    scrollbar-width: none;
+
+}
+
+.filter-buttons::-webkit-scrollbar {
+    display: none;
+ 
+}
+
+
+
+.filter-btn {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 0.9em;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: #ff7518;
+    color: #fff;
+    border-color: #fff;
+}
+
+.menufilter-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /* Hide overflow to keep modal fixed size */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black with transparency */
+}
+
+.menufilter-modal-content {
+    background-color: #ffffff;
+    margin: auto;
+    /* Center the modal */
+    position: relative;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 800px;
+    /* Fixed width */
+    height: 600px;
+    /* Fixed height */
+    max-width: 800px;
+    /* Maximum width */
+    max-height: 600px;
+    /* Maximum height */
+    border-radius: 8px;
+    display: flex;
+    /* Make it a flex container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal close button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 200px;
+    border-right: 1px solid #ddd;
+    padding: 10px;
+    overflow-y: auto;
+    /* Scroll if content is too large */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px 5px;
+    cursor: pointer;
+    color: #333;
+}
+
+.sidebar ul li.active {
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+.sidebar ul li:hover {
+    background-color: #f0f0f0;
+}
+
+
+
+
+.filter-options-container {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+
+
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#pageForm label {
+    cursor: pointer;
+    display: flex;
+    font-size: 16px;
+    transition: color 0.3s ease; /* Smooth transition for color change */
+  }
+
+#pageForm label input {
+    cursor: pointer;
+    width: 10%;
+    font-size: 12px;
+    transition: color 0.3s ease; /* Smooth transition for color change */
+  }
+
+
+
+
+.inline-row {
+  display: flex;
+  align-items: center;
+  gap: 2px; /* Adds a 2px gap between label and checkbox */
+  margin-bottom: 5px; /* Adds spacing between rows */
+}
+
+
+
+
+
+.apply-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 20px;
+    right: 2%;
+    gap: 10px;
+}
+
+
+.apply-buttons .clear-button {
+
+    background-color: #827373;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.apply-buttons .apply-button {
+    background-color: #f98a04;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    
+}
+
+
+.filter-options-container::-webkit-scrollbar {
+    display: none;
+ 
+}
+
+
+
+
+
+
+
+
+ .location-filter-section {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+.location-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.location-icon {
+    font-size: 1.2em;
+    color: #ff6347;
+    /* Color similar to the location pin */
+}
+
+.location-text {
+    margin-left: 8px;
+    font-size: .7em;
+    color: #333;
+    flex: 1;
+
+    /* Ensure the text does not wrap */
+    white-space: nowrap;
+    /* Prevents text from wrapping */
+    overflow: hidden;
+    /* Hides overflow text */
+    text-overflow: ellipsis;
+    /* Optional: Adds ellipsis (...) for overflowed text */
+    cursor: pointer;
+    /* Change cursor to pointer on hover */
+    position: relative;
+    /* Position for absolute dropdown */
+}
+
+
+
+
+
+
+
+
+
+.filter-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    display: flex;
+    /* Use flexbox for layout */
+    overflow-x: auto;
+    /* Enable horizontal scrolling */
+    overflow-y: hidden;
+    /* Prevent vertical overflow */
+    white-space: nowrap;
+    /* Prevent line breaks */
+    padding: 10px;
+    /* Optional padding */
+    
+    /* Optional border for visualization */
+    scrollbar-width: none;
+    /* For Firefox */
+}
+
+.filter-buttons::-webkit-scrollbar {
+    display: none;
+    /* For Chrome, Safari, and Edge */
+}
+
+
+
+.filter-btn {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 0.9em;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: #ff6347;
+    color: #fff;
+    border-color: #ff6347;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /* Hide overflow to keep modal fixed size */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black with transparency */
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: auto;
+    /* Center the modal */
+    position: relative;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 800px;
+    /* Fixed width */
+    height: 600px;
+    /* Fixed height */
+    max-width: 800px;
+    /* Maximum width */
+    max-height: 600px;
+    /* Maximum height */
+    border-radius: 8px;
+    display: flex;
+    /* Make it a flex container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal close button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 200px;
+    border-right: 1px solid #ddd;
+    padding: 10px;
+    overflow-y: auto;
+    /* Scroll if content is too large */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px 5px;
+    cursor: pointer;
+    color: #333;
+}
+
+.sidebar ul li.active {
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+.sidebar ul li:hover {
+    background-color: #f0f0f0;
+}
+
+
+
+
+.filter-options-container {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+
+#pageForm label {
+    font-size: 1em;
+    color: #555;
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter-options input {
+    margin-right: 10px;
+
+}
+
+.apply-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 20px;
+    right: 25%;
+    gap: 10px;
+}
+
+
+.clear-button {
+
+    background-color: #f1f1f1;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.apply-button button {
+    background-color: #f98a04;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    
+}
