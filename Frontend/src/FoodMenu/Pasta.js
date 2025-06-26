@@ -68,14 +68,14 @@ const MenuComponent = () => {
     return (price * quantity).toFixed(2);
   };
 
-  // Inline styles
+
 
   const containerStyle = {
   padding: '20px',
-  paddingLeft: '32px',         // Add this
+  paddingLeft: '32px',        
  paddingRight: '12px',
-  width: '95vw',              // Use 95% of viewport width
-  maxWidth: '1100px',         // Increased width
+  width: '95vw',             
+  maxWidth: '1100px',         
   margin: '0 auto',
   boxSizing: 'border-box',
   
@@ -93,7 +93,7 @@ const cardsWrapperStyle = {
 };
 
 const cardStyle = {
-  flex: '0 0 calc(15.6% - 14px)', // Ensures 6 per row with spacing
+  flex: '0 0 calc(15.6% - 14px)',
   borderRadius: '12px',
   boxShadow: '0 4px 10px rgba(0, 0, 0, 0.08)',
   backgroundColor: '#fff',

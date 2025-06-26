@@ -293,6 +293,7 @@
 // export default ManageOrder;
 
 import React, { useEffect, useState, useContext } from "react";
+import { PlusCircle, Edit, Trash2 } from "lucide-react";
 import UserContext from "../UseContext";
 
 const ManageOrder = () => {
@@ -408,7 +409,11 @@ const ManageOrder = () => {
 
   return (
     <div style={modalStyles.container}>
-      <h2 style={{ color: "#d63384", marginBottom: "20px", textAlign:'center' }}>Manage Orders</h2>
+      <h2
+        style={{ color: "#d63384", marginBottom: "20px", textAlign: "center" }}
+      >
+        Manage Orders
+      </h2>
       {updateMessage && <p style={{ color: "green" }}>{updateMessage}</p>}
       <table style={modalStyles.table}>
         <thead>
@@ -452,17 +457,18 @@ const ManageOrder = () => {
               <td style={modalStyles.td}>{order.phone}</td>
               <td style={modalStyles.td}>{order.email}</td>
               <td style={modalStyles.td}>
-                <button
+                <button  className="text-blue-600 hover:text-blue-800 mr-3"
                   onClick={() => openUpdateModal(order)}
-                  style={modalStyles.buttonPrimary}
                 >
-                  Update
+                <Edit size={18} />
                 </button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+
+      
 
       {selectedOrder && (
         <div style={modalStyles.overlay}>
@@ -546,13 +552,12 @@ const ManageOrder = () => {
 const modalStyles = {
   container: {
     fontFamily: `'Segoe UI', 'Arial', sans-serif`,
-    maxWidth: '900px',
-    margin: '30px auto',
-    padding: '25px',
-    background: '#ffffff',
-    borderRadius: '15px',
-    boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-    
+    maxWidth: "900px",
+    margin: "30px auto",
+    padding: "25px",
+    background: "#ffffff",
+    borderRadius: "15px",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
   },
 
   overlay: {
@@ -620,12 +625,15 @@ const modalStyles = {
     fontSize: "14px",
   },
   th: {
-    background: "#ff69b4",
-    color: "#fff",
     padding: "10px",
-    fontWeight: "bold",
     textAlign: "left",
     fontSize: "13px",
+    borderBottom: "1px solid #f0f0f0",
+    background: "#ffebee", // Light pink header
+    color: "#e91e63",
+    fontWeight: 700,
+    textTransform: "uppercase",
+    letterSpacing: "0.5px",
   },
   td: {
     padding: "10px",

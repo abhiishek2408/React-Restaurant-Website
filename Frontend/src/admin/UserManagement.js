@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Edit, Trash2 } from "lucide-react";
 
 // Base styling
 const styles = {
@@ -29,12 +30,15 @@ const styles = {
     fontSize: '14px',
   },
   th: {
-    background: "#ff69b4",
-    color: "#fff",
-    padding: "10px",
-    fontWeight: "bold",
+     padding: "10px",
     textAlign: "left",
     fontSize: "13px",
+    borderBottom: "1px solid #f0f0f0",
+    background: "#ffebee", 
+    color: "#e91e63",
+    fontWeight: 700,
+    textTransform: "uppercase",
+    letterSpacing: "0.5px",
   },
 
   td: {
@@ -317,20 +321,23 @@ const UserTable = () => {
                     )}
                   </td>
                   <td style={styles.td}>
-                    <button
-                      style={{ ...styles.actionBtn, ...styles.updateBtn }}
+
+
+
+                   <button   className="text-blue-600 hover:text-blue-800 mr-3"
+                      style={{ ...styles.actionBtn}}
                       onClick={() => {
                         setSelectedUser(user);
                         setShowUpdateForm(true);
                       }}
                     >
-                      Update
+                       <Edit size={18} />
                     </button>
-                    <button
-                      style={{ ...styles.actionBtn, ...styles.deleteBtn }}
+                    <button  className="text-red-600 hover:text-blue-800 mr-3"
+                      style={{ ...styles.actionBtn }}
                       onClick={() => handleDeleteUser(user.user_id)}
                     >
-                      Delete
+                       <Trash2 size={18} />
                     </button>
                   </td>
                 </tr>

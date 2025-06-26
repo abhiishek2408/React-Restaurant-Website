@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { PlusCircle, Edit, Trash2 } from "lucide-react";
 
 const MenuManagement = () => {
   const [menuSections, setMenuSections] = useState([]);
@@ -120,12 +121,15 @@ const MenuManagement = () => {
     fontSize: '14px',
   },
      th: {
-    background: "#ff69b4",
-    color: "#fff",
-    padding: "10px",
-    fontWeight: "bold",
+      padding: "10px",
     textAlign: "left",
     fontSize: "13px",
+    borderBottom: "1px solid #f0f0f0",
+    background: "#ffebee", 
+    color: "#e91e63",
+    fontWeight: 700,
+    textTransform: "uppercase",
+    letterSpacing: "0.5px",
   },
     td: {
       padding: "10px",
@@ -148,7 +152,7 @@ const MenuManagement = () => {
       fontSize: "13px",
     },
     deleteBtn: {
-      background: "#ff4d6d",
+      background: "white",
       color: "#fff",
     },
     updateBtn: {
@@ -299,17 +303,17 @@ buttonRow: {
                 )}
               </td>
               <td style={styles.td}>
-                <button
-                  style={{ ...styles.actionBtn, ...styles.deleteBtn }}
+                <button  className="text-blue-600 hover:text-blue-800 mr-3"
+                  style={{ ...styles.actionBtn}}
                   onClick={() => handleDelete(item.Id)}
                 >
-                  Delete
+                 <Trash2 size={18} />
                 </button>
-                <button
-                  style={{ ...styles.actionBtn, ...styles.updateBtn }}
+                <button className="text-red-600 hover:text-blue-800 mr-3"
+                  style={{ ...styles.actionBtn }}
                   onClick={() => handleEditClick(item)}
                 >
-                  Update
+                <Edit size={18} />
                 </button>
               </td>
             </tr>

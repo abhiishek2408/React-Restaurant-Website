@@ -47,6 +47,7 @@ import GrilledBarbecueDishes from "../FoodMenu/GrilledBarbecueDishes";
 import AsianDishes from "../FoodMenu/AsianDishes";
 import VegetarianVeganDishes from "../FoodMenu/VegetarianVeganDishes";
 import MexicanDishes from "../FoodMenu/MexicanDishes";
+import GetOffers from "../FoodMenu/GetOffers";
 
 const containerMaxWidth = "1040px";
 
@@ -470,6 +471,12 @@ const HeroSection = () => {
       <section>
         <div>{selectedMenu}</div>
       </section>
+
+
+<section>
+  <GetOffers />
+    </section>
+     
 
 <div style={styles.contactWrapperStyle}>
   <div style={styles.contactContainerStyle}>

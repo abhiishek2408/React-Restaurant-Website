@@ -34,7 +34,7 @@ function BookTable() {
     const data = { ...formData, user_id: user.user_id };
     setIsLoading(true);
 
-    try {
+    try {         
       const res = await axios.post("http://localhost/onlinerestro/backend/bookTable.php", data);
       if (res.data.status === "success") {
         setIsSuccess(true);

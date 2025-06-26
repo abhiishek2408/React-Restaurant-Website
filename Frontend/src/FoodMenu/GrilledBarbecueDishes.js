@@ -73,7 +73,7 @@ const MenuComponent = () => {
   const containerStyle = {
   padding: '20px',
   paddingLeft: '32px',         // Add this
- paddingRight: '12px',
+  paddingRight: '12px',
   width: '95vw',              // Use 95% of viewport width
   maxWidth: '1100px',         // Increased width
   margin: '0 auto',

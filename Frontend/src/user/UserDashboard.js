@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { FaFacebookF, FaInstagram, FaTwitter, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaTwitter,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 import {
   Link,
   Routes,
   Route,
   useNavigate,
-  Navigate,
   useLocation,
 } from "react-router-dom";
 import Home from "./Home";
@@ -18,11 +22,15 @@ import Order from "./Order";
 import BookTable from "./BookTable";
 import EventBook from "./EventBook";
 import OrderHistory from "./OrderHistory";
+import TimingsModal from "./TimingsModal";
+import AIChat from "./AIChat";
 
 const UserDashboard = () => {
   const routerLocation = useLocation();
   const [location, setLocation] = useState("");
   const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
+  const [showTimeModal, setShowTimeModal] = useState(false);
 
   const [user, setUser] = useState(() => {
     try {
@@ -89,35 +97,40 @@ const UserDashboard = () => {
     fetchLocation();
   }, []);
 
-const fetchLocation = () => {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const lat = position.coords.latitude;
-        const lon = position.coords.longitude;
+  const fetchLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
 
-        fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`)
-          .then((response) => response.json())
-          .then((data) => {
-            const address = data.address;
-            const city = address.city || address.town || address.village || address.county;
-            const country = address.country;
+          fetch(
+            `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`
+          )
+            .then((response) => response.json())
+            .then((data) => {
+              const address = data.address;
+              const city =
+                address.city ||
+                address.town ||
+                address.village ||
+                address.county;
+              const country = address.country;
 
-            const shortLocation = [city, country].filter(Boolean).join(", ");
-            setLocation(shortLocation); // ✅ Now shows like "Mumbai, India"
-          })
-          .catch((error) => {
-            console.error("Location fetch error:", error);
-            setLocation("Location unavailable");
-          });
-      },
-      () => alert("Unable to retrieve your location.")
-    );
-  } else {
-    alert("Geolocation not supported by this browser.");
-  }
-};
-
+              const shortLocation = [city, country].filter(Boolean).join(", ");
+              setLocation(shortLocation); // ✅ Now shows like "Mumbai, India"
+            })
+            .catch((error) => {
+              console.error("Location fetch error:", error);
+              setLocation("Location unavailable");
+            });
+        },
+        () => alert("Unable to retrieve your location.")
+      );
+    } else {
+      alert("Geolocation not supported by this browser.");
+    }
+  };
 
   const styles = {
     nav: {
@@ -164,22 +177,22 @@ const fetchLocation = () => {
       gap: "10px",
       cursor: "pointer",
     },
-dropdown: {
-  position: "absolute",
-  top: "100%",
-  right: 90,
-  minWidth: "180px",
-  backgroundColor: "#ffffff",
-  borderRadius: "8px",
-  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
-  zIndex: 999,
-  padding: "12px 16px",
-  display: "flex",
-  flexDirection: "column",
-  gap: "12px",
-  transition: "all 0.3s ease-in-out",
-  border: "1px solid #eaeaea",
-},
+    dropdown: {
+      position: "absolute",
+      top: "100%",
+      right: 90,
+      minWidth: "180px",
+      backgroundColor: "#ffffff",
+      borderRadius: "8px",
+      boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
+      zIndex: 999,
+      padding: "12px 16px",
+      display: "flex",
+      flexDirection: "column",
+      gap: "12px",
+      transition: "all 0.3s ease-in-out",
+      border: "1px solid #eaeaea",
+    },
     footer: {
       backgroundColor: "#fff",
       color: "#000",
@@ -236,33 +249,29 @@ dropdown: {
       fontSize: "13px",
     },
 
-
     socialIcons: {
-  display: 'flex',
-  gap: '12px',
-  marginTop: '10px',
-},
+      display: "flex",
+      gap: "12px",
+      marginTop: "10px",
+    },
 
-socialLink: {
-  color: '#ff69b4',
-  fontSize: '20px',
-  textDecoration: 'none',
-  transition: 'color 0.3s',
-},
+    socialLink: {
+      color: "#ff69b4",
+      fontSize: "20px",
+      textDecoration: "none",
+      transition: "color 0.3s",
+    },
 
-socialLinkHover: {
-  color: '#d63384',
-},
+    socialLinkHover: {
+      color: "#d63384",
+    },
 
-socialLink: {
-  color: '#ff69b4',
-  fontSize: '20px',
-  transition: 'color 0.3s',
-  textDecoration: 'none',
-}
-
-
-   
+    socialLink: {
+      color: "#ff69b4",
+      fontSize: "20px",
+      transition: "color 0.3s",
+      textDecoration: "none",
+    },
   };
 
   return (
@@ -270,33 +279,30 @@ socialLink: {
       {/* Navbar */}
       <nav style={styles.nav}>
         {/* <h1 style={{ fontFamily: "Arial", margin: 0 }}>Bistrofy</h1> */}
-<h1 style={{ fontFamily: "Arial", margin: 0 }}>
-  Bistro<span style={{ color: "#ff69b4" }}>fy</span>
-</h1>
+        <h1 style={{ fontFamily: "Arial", margin: 0 }}>
+          Bistro<span style={{ color: "#ff69b4" }}>fy</span>
+        </h1>
 
+        <select
+          style={{
+            width: "fit-content", // or a fixed small value like '40px'
+            maxWidth: "170px", // force upper limit
+            background: "none",
+            border: "none",
+            outline: "none",
+            fontSize: "14px",
+            color: "#333",
+            padding: 0,
+            margin: 0,
 
-
-<select
-  style={{
-   width: 'fit-content',          // or a fixed small value like '40px'
-    maxWidth: '170px',              // force upper limit
-    background: 'none',
-    border: 'none',
-    outline: 'none',
-    fontSize: '14px',
-    color: '#333',
-    padding: 0,
-    margin: 0,
-   
-    cursor: 'pointer',
-    overflow: 'hidden',
-    whiteSpace: 'nowrap',
-    textOverflow: 'ellipsis',
-  }}
->
-  <option value={location}>📍 {location}</option>
-</select>
-
+            cursor: "pointer",
+            overflow: "hidden",
+            whiteSpace: "nowrap",
+            textOverflow: "ellipsis",
+          }}
+        >
+          <option value={location}>📍 {location}</option>
+        </select>
 
         <ul style={styles.ul}>
           {[
@@ -308,7 +314,8 @@ socialLink: {
             <li
               key={link.name}
               style={
-                (routerLocation.pathname === "/user" && link.path === "/user") ||
+                (routerLocation.pathname === "/user" &&
+                  link.path === "/user") ||
                 routerLocation.pathname.includes(link.path)
                   ? styles.activeLink
                   : styles.li
@@ -327,14 +334,40 @@ socialLink: {
             <span
               id="loginButton"
               onClick={toggleDropdown}
-              style={{ textDecoration: "none", color: "#000", cursor: "pointer" }}
+              style={{
+                textDecoration: "none",
+                color: "#000",
+                cursor: "pointer",
+              }}
             >
               Login
             </span>
             {isDropdownOpen && (
-              <div className="dropdown" style={styles.dropdown} id="logindropdown">
-                <Link  style={{ textDecoration: "none", color: "#000", cursor: "pointer" }} to="/login">Signin</Link>
-                <Link  style={{ textDecoration: "none", color: "#000", cursor: "pointer" }} to="/signup">Signup</Link>
+              <div
+                className="dropdown"
+                style={styles.dropdown}
+                id="logindropdown"
+              >
+                <Link
+                  style={{
+                    textDecoration: "none",
+                    color: "#000",
+                    cursor: "pointer",
+                  }}
+                  to="/login"
+                >
+                  Signin
+                </Link>
+                <Link
+                  style={{
+                    textDecoration: "none",
+                    color: "#000",
+                    cursor: "pointer",
+                  }}
+                  to="/signup"
+                >
+                  Signup
+                </Link>
                 <span onClick={handleLogout} style={{ cursor: "pointer" }}>
                   Logout
                 </span>
@@ -367,10 +400,29 @@ socialLink: {
               className="dropdown"
               id="profiledropdown"
             >
-              <Link style={{ textDecoration: "none", color: "#000" }} to="/user/userprofile">View Profile</Link>
-              <Link style={{ textDecoration: "none", color: "#000" }} to="/user/orderhistory">Order History</Link>
-              <Link style={{ textDecoration: "none", color: "#000" }} to="/user/reservations">My Reservations</Link>
-              <Link style={{ textDecoration: "none", color: "#000" }} to="/logout" onClick={handleLogout}>
+              <Link
+                style={{ textDecoration: "none", color: "#000" }}
+                to="/user/userprofile"
+              >
+                View Profile
+              </Link>
+              <Link
+                style={{ textDecoration: "none", color: "#000" }}
+                to="/user/orderhistory"
+              >
+                Order History
+              </Link>
+              <Link
+                style={{ textDecoration: "none", color: "#000" }}
+                to="/user/reservations"
+              >
+                My Reservations
+              </Link>
+              <Link
+                style={{ textDecoration: "none", color: "#000" }}
+                to="/logout"
+                onClick={handleLogout}
+              >
                 Logout
               </Link>
             </div>
@@ -378,7 +430,7 @@ socialLink: {
         </div>
       </nav>
 
-       <Routes>
+      <Routes>
         <Route index element={<Home />} /> {/* Default route */}
         <Route path="about" element={<About />} />
         <Route path="order" element={<Order />} />
@@ -391,81 +443,96 @@ socialLink: {
 
       {/* Footer */}
 
+      <footer style={styles.footer}>
+        <div style={styles.footerContainer}>
+          <div style={styles.footerSection}>
+            <h3 style={styles.footerHeading}>Contact Us</h3>
+            <p style={styles.footerText}>
+              123 Kashi Vishwanath Road, Varanasi, Uttar Pradesh, 221001
+            </p>
+            <p style={styles.footerText}>Phone: +91 98765 43210</p>
+            <p style={styles.footerText}>Email: info@yourbistrofy.com</p>
+          </div>
 
-<footer style={styles.footer}>
-  <div style={styles.footerContainer}>
-    <div style={styles.footerSection}>
-      <h3 style={styles.footerHeading}>Contact Us</h3>
-      <p style={styles.footerText}>
-        123 Kashi Vishwanath Road, Varanasi, Uttar Pradesh, 221001
-      </p>
-      <p style={styles.footerText}>Phone: +91 98765 43210</p>
-      <p style={styles.footerText}>Email: info@yourbistrofy.com</p>
-    </div>
+          <div style={styles.footerSection}>
+            <h3 style={styles.footerHeading}>Quick Links</h3>
+            <ul style={styles.footerList}>
+              <li>
+                <Link
+                  style={styles.footerLink}
+                  onClick={() => setShowModal(true)}
+                >
+                  AIChat
+                </Link>
+              </li>
+              <li>
+                <Link
+                  
+                  style={styles.footerLink}
+                  onClick={() => setShowTimeModal(true)}
+                >
+                  Timings
+                </Link>
+              </li>
+              <li>
+                <Link to="about" style={styles.footerLink}>
+                  Privacy
+                </Link>
+              </li>
+              <li>
+                <Link to="about" style={styles.footerLink}>
+                  Terms
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-    <div style={styles.footerSection}>
-      <h3 style={styles.footerHeading}>Quick Links</h3>
-      <ul style={styles.footerList}>
-        <li>
-          <Link to="order" style={styles.footerLink}>Blog</Link>
-        </li>
-        <li>
-          <Link to="eventbook" style={styles.footerLink}>Privacy</Link>
-        </li>
-        <li>
-          <Link to="about" style={styles.footerLink}>Terms</Link>
-        </li>
-      </ul>
-    </div>
+          <div style={styles.footerSection}>
+            <h3 style={styles.footerHeading}>Follow Us</h3>
+            <div style={styles.socialIcons}>
+              <a
+                href="https://facebook.com"
+                style={styles.socialLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaFacebookF size={20} />
+              </a>
+              <a
+                href="https://instagram.com"
+                style={styles.socialLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaInstagram size={20} />
+              </a>
+              <a
+                href="https://twitter.com"
+                style={styles.socialLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaTwitter size={20} />
+              </a>
+              <a
+                href="https://maps.google.com"
+                style={styles.socialLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaMapMarkerAlt size={20} />
+              </a>
+            </div>
+          </div>
+        </div>
 
-    <div style={styles.footerSection}>
-      <h3 style={styles.footerHeading}>Follow Us</h3>
-      <div style={styles.socialIcons}>
-        <a
-          href="https://facebook.com"
-          style={styles.socialLink}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaFacebookF size={20} />
-        </a>
-        <a
-          href="https://instagram.com"
-          style={styles.socialLink}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaInstagram size={20} />
-        </a>
-        <a
-          href="https://twitter.com"
-          style={styles.socialLink}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaTwitter size={20} />
-        </a>
-        <a
-          href="https://maps.google.com"
-          style={styles.socialLink}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaMapMarkerAlt size={20} />
-        </a>
-      </div>
-    </div>
-  </div>
+        <div style={styles.footerBottom}>
+          <p style={styles.footerText}>© 2024 Bistrofy. All rights reserved.</p>
+        </div>
+      </footer>
 
-  <div style={styles.footerBottom}>
-    <p style={styles.footerText}>© 2024 Bistrofy. All rights reserved.</p>
-  </div>
-</footer>
-
-
-
-
-
+      {showModal && <AIChat closeModal={() => setShowModal(false)} />}
+      {showTimeModal && <TimingsModal closeModal={() => setShowTimeModal(false)} />}
     </div>
   );
 };

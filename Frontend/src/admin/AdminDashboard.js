@@ -5,6 +5,7 @@ import HomeAdmin from "./HomeAdmin";
 import Profile from "./AdminProfile";
 import MenuManagement from "./MenuManagement";
 import ManageOrder from "./ManageOrder";
+import UpdateOffers from "./UpdateOffers";
 import BarcodeScannerInvoice from "./BarcodeScannerInvoice";
 
 const AdminDashboard = () => {
@@ -60,6 +61,9 @@ const AdminDashboard = () => {
             <Link to="ordermanage" style={styles.navLink}>Orders</Link>
           </li>
           <li>
+            <Link to="offermanage" style={styles.navLink}>Offers</Link>
+          </li>
+          <li>
             <Link to="usermanage" style={styles.navLink}>Users</Link>
           </li>
           <li>
@@ -87,6 +91,7 @@ const AdminDashboard = () => {
           <Route path="/admin/profile" element={<Profile />} />
           <Route path="/menumanage" element={<MenuManagement />} />
           <Route path="/ordermanage" element={<ManageOrder />} />
+          <Route path="/offermanage" element={<UpdateOffers />} />
           <Route path="/" element={<HomeAdmin />} />
           <Route path="/homeadmin" element={<HomeAdmin />} />
           <Route path="/barcode" element={<BarcodeScannerInvoice />} />
@@ -113,7 +118,7 @@ const styles = {
     boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)",
     position: "sticky",
     top: 0,
-    zIndex: 1000,
+    zIndex: 10,
   },
   logo: {
     fontSize: "24px",
